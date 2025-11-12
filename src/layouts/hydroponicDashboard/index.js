@@ -222,8 +222,8 @@ function HydroponicDashboard() {
       </Grid>
 
       {/* Big multi-sensor chart controls and chart */}
-      <ArgonBox mt={5} px={3} py={3} border={1} borderColor="grey.300" borderRadius="lg" bgcolor={darkMode ? "#111c44 !important" : "#ffffff !important"}
-        color={darkMode ? "#ffffff !important" : "#67748e !important"}>
+      <ArgonBox mt={5} px={3} py={3} border={1} borderColor="grey.300" borderRadius="lg" bgcolor={darkMode ? "#111c44 !important" : "#ffffff !important"}  color={darkMode ? "#ffffff !important" : "#67748e !important"}>
+       
         <FormLabel component="legend" sx={{ mb: 1, fontWeight: 700, color: darkMode ? "#ffffff !important" : "#67748e !important" }} >Select Sensors</FormLabel>
         <FormGroup row>
           {["pH", "EC", "Water Temp", "Humidity"].map((sensor) => (
@@ -240,7 +240,7 @@ function HydroponicDashboard() {
         </RadioGroup>
 
         {/* Big Gradient Line Chart */}
-        <GradientLineChart chart={bigChartData} height="330px" />
+        <GradientLineChart chart={bigChartData} height="90%"/>
       </ArgonBox>
 
     </ArgonBox>

@@ -39,7 +39,7 @@ const InventoryMgt = () => {
       <ArgonBox py={3}>
 
         <Card sx={{ p: 2, backgroundColor: darkMode ? '#3540677a' : "#9f9f9f97" }}>
-          <CardContent>
+          <CardContent width={"100%"} height={"100%"}>
             <Typography variant="h4" gutterBottom color={{ color: darkMode ? "#ffffff !important" : "#344767 !important" }}>Inventory Management</Typography>
 
             <Tabs value={tab} onChange={handleChange} variant="scrollable" scrollButtons="auto">

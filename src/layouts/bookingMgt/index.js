@@ -57,7 +57,7 @@ function BookingMgt() {
             </Tabs>
 
             <Divider />
-            <Box mt={3}>
+            <Box mt={3} width={"100%"} height={"100%"}>
               {tab === 0 && <BookingList />}
               {tab === 1 && <CalendarView />}
               {tab === 2 && <BookingForm />}

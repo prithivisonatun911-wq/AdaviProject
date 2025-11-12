@@ -79,32 +79,54 @@ function Default() {
         {/* 🔁 Line Chart with Year Selector - dropdown ABOVE chart */}
         <ArgonBox
           p={3}
-          mb={3}
-          borderRadius="lg"
-          boxShadow="md"
-          bgcolor="background.paper"
+          mb={4}
+          borderRadius="xl"
+          sx={{
+            background: "rgba(255,255,255,0.08)",
+            backdropFilter: "blur(16px)",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+            overflow: "hidden",
+          }}
         >
-          <ArgonBox mb={2} width={{ xs: "100%", md: "200px" }}>
-            <ArgonTypography variant="button" fontWeight="bold" mb={1}>
-              Select Year
-            </ArgonTypography>
-            <Select value={selectedYear} onChange={handleYearChange} fullWidth>
-              {availableYears.map((year) => (
-                <MenuItem key={year} value={year}>
-                  {year}
-                </MenuItem>
-              ))}
-            </Select>
-          </ArgonBox>
+          <Grid container alignItems="center" justifyContent="space-between" mb={2}>
+            <Grid item>
+              <ArgonTypography variant="h6" fontWeight="medium">
+                Sector Earnings - Yearly Overview ({selectedYear})
+              </ArgonTypography>
+              <ArgonTypography variant="caption" color="text">
+                Earnings trend across all sectors from Jan to Oct
+              </ArgonTypography>
+            </Grid>
+            <Grid item xs={12} md={2}>
+              <Select
+                value={selectedYear}
+                onChange={handleYearChange}
+                fullWidth
+                variant="outlined"
+                size="small"
+                sx={{
+                  color: "#fff",
+                  borderColor: "rgba(255,255,255,0.3)",
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "rgba(255,255,255,0.3)",
+                  },
+                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "rgba(255,255,255,0.6)",
+                  },
+                }}
+              >
+                {availableYears.map((year) => (
+                  <MenuItem key={year} value={year}>
+                    {year}
+                  </MenuItem>
+                ))}
+              </Select>
+            </Grid>
+          </Grid>
 
-          <GradientLineChart
-            title={`Sector Earnings - Yearly Overview (${selectedYear})`}
-            description="Earnings trend across all sectors from Jan to Oct"
-            chart={sectorYearlyChartData[selectedYear]}
-          />
+
+          <GradientLineChart chart={sectorYearlyChartData[selectedYear]} height="90%"/>
         </ArgonBox>
-
-
 
 
         {/* 📊 Profit Table */}

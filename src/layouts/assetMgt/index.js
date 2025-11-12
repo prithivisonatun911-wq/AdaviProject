@@ -241,7 +241,7 @@ const AssetMgt = () => {
       <DashboardNavbar />
       <ArgonBox py={3}>
 
-        <Card sx={{ p: 4, backgroundColor: darkMode ? '#3540677a' : "#9f9f9f97" }}>
+        <Card sx={{ p: 4, backgroundColor: darkMode ? '#3540677a' : "#9f9f9f97" }} width={"100%"} height={"100%"}>
           <Typography variant="h6" gutterBottom pb={1} sx={{ color: darkMode ? '#ffffff' : '#344767' }}  >
             Asset Overview by Location
           </Typography>
@@ -343,6 +343,7 @@ const AssetMgt = () => {
             })}
           </Grid>
         </Card>
+
       </ArgonBox>
       <Footer />
     </DashboardLayout>
